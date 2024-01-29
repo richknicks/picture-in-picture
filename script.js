@@ -17,7 +17,7 @@ const selectMediaStream = async() => {
 }
 
 // On Click Handler
-captureButton.addEventListener('click', ()=> {selectMediaStream});
+captureButton.addEventListener('click', ()=> {selectMediaStream()});
 button.addEventListener('click', async () => {
 // Disable Button
     button.disabled = true;
