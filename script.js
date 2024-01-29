@@ -1,6 +1,6 @@
 const videoElement = document.getElementById('video');
 const button = document.getElementById('button');
-// const captureButton = document.getElementById('capture-button');
+const captureButton = document.getElementById('capture-button');
 // Prompt select media stream, pass to video element, then play
 
 const selectMediaStream = async() => {
@@ -17,7 +17,7 @@ const selectMediaStream = async() => {
 }
 
 // On Click Handler
-// captureButton.addEventListener('click', selectMediaStream);
+captureButton.addEventListener('click', selectMediaStream);
 button.addEventListener('click', async () => {
 // Disable Button
     button.disabled = true;
