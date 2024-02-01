@@ -1,6 +1,8 @@
 const videoElement = document.getElementById('video');
 const button = document.getElementById('button');
 const captureButton = document.getElementById('capture-button');
+const capbutdiv = document.getElementById('capbutdiv');
+const butdiv = document.getElementById('butdiv');
 const displayMediaOptions = {
     video: {
       displaySurface: "browser",
@@ -33,13 +35,20 @@ const selectMediaStream = async(displayMediaOptions) => {
 // On Click Handler
 captureButton.addEventListener('click', ()=> {
     selectMediaStream();
+    capbutdiv.hidden = true;
+    butdiv.hidden = false;
 });
 button.addEventListener('click', async () => {
-// Disable Button
-    button.disabled = true;
+    // Disable Button
+    video.hidden = false;
+    button.disabled = false;
+    
     // Start Picture in Picture
     await videoElement.requestPictureInPicture();
     // Reset Button
+    
+    butdiv.hidden = true;
+    capbutdiv.hidden = false;
     button.disable = false;
 });
 
